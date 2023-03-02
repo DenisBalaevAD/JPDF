@@ -24,11 +24,11 @@ class MainActivity : AppCompatActivity() {
         DocumentActivity.openDocument(this, fileLink, config)*/
 
         val config = ViewerConfig.Builder().openUrlCachePath(this.cacheDir.absolutePath)
-            .showPageNumberIndicator(true)
-            .hidePresetBar(false)
             .showAppBar(false)
-            .useSupportActionBar(false)
             .showBottomToolbar(false)
+            .pageStackEnabled(false)//навигация по страницы (сохранение действий)
+            .showDocumentSlider(false)//прокрутка
+            .showPageNumberIndicator(true)//номер страницы
             .build()
 
         val fileLink = Uri.parse("file:///android_asset/instruction4.pdf")
